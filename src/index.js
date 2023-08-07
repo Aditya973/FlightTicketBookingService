@@ -11,6 +11,7 @@ const PORT = process.env.PORT || 3002;
 const createAndSetUpServer = () => {
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({extended:true}));
+    app.use('/bookingservice/api',ApiRoutes);
     app.use('/api',ApiRoutes);
     app.listen(PORT,() =>{
         console.log('server listening to port ',PORT);
